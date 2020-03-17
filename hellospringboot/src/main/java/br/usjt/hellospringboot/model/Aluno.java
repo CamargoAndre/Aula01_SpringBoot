@@ -15,8 +15,6 @@ public class Aluno implements Serializable {
 	private String nome;
 	
 	private Double mediaNotas;
-	
-	//getters/setters
 
 	public Long getId() {
 		return id;
@@ -41,6 +39,12 @@ public class Aluno implements Serializable {
 	public void setMediaNotas(Double mediaNotas) {
 		this.mediaNotas = mediaNotas;
 	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	
+	//getters/setters
 	
 
 }
