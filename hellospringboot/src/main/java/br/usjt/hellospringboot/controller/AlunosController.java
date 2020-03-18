@@ -23,21 +23,20 @@ public class AlunosController {
 		//passe o nome da pagina ao contrutor
 		ModelAndView mv = new ModelAndView("lista_alunos");
 		
-		//para modelar o formulario
-		mv.addObject(new Aluno());
-		
 		//Busque a coleção com o repositório
 		List<Aluno> alunos = alunosRepo.findAll();
 		
 		//Adicione a coleção ao objeto ModelAndView
 		mv.addObject("alunos", alunos);
- 		
+		
+		//para modelar o formulario
+		mv.addObject(new Aluno());
 		
 		//devolva o ModelAndView
 		return mv;
 	}
 	
-	@PostMapping
+	@PostMapping("/alunos")
 	public String salvar(Aluno aluno) {
 		alunosRepo.save(aluno);
 		return "redirect:/alunos";
